@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: mvc-core-webapp
-          image: image-registry.openshift-image-registry.svc:5000/ibm-cnt-dev/mvc-core-webapp:latest
+          image: image-registry.openshift-image-registry.svc:5000/ibm-cnt-dev/demo-refdoc-webapp:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
