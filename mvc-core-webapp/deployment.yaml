@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mvc-core-webapp
+  labels:
+    app: mvc-core-webapp
+spec:
+  selector:
+    matchLabels:
+      app: mvc-core-webapp
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: mvc-core-webapp
+    spec:
+      containers:
+        - name: mvc-core-webapp
+          image: image-registry.openshift-image-registry.svc:5000/ibm-cnt-dev/mvc-core-webapp:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+            - containerPort: 9090
+              protocol: TCP
+  
